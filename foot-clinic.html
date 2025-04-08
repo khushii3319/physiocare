@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foot Clinic</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    header {
+      background-color: #2bbbad;
+      padding: 2rem 1.5rem;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: left;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2.5rem 1.5rem;
+    }
+
+    h2 {
+      color: #2bbbad;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+      color: #555;
+    }
+
+    strong {
+      color: #000000;
+    }
+
+    .media-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 3rem 0;
+      justify-content: center;
+    }
+
+    .image-container,
+    .video-container {
+      flex: 1 1 400px;
+      max-width: 500px;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      border: none;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #2bbbad;
+      color: white;
+      padding: 1rem 2.2rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin-top: 2rem;
+    }
+
+    .button:hover {
+      background-color: #159c91;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        font-size: 1.6rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .media-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      iframe {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Foot Clinic
+  </header>
+
+  <div class="container">
+    <p>Your feet carry you around all day, whether walking, running, jumping, playing sports, or tip-toeing around the fridge at midnight. But you never think about them until they start hurting. Here, we recognize the importance of keeping your foot flexible and pain-free.</p>
+
+    <h2>Know Your Type of Pain</h2>
+
+    <p><strong>Heel pain –</strong> It may be caused by Plantar Fasciitis (inflammation of tissues in the heel) or an impact injury that feels like you're walking on a pebble. Heel spurs (abnormal bone growth at the bottom of your heel) can also be a cause, although it does not always hurt unless you have flat feet or high arches.</p>
+
+    <p><strong>Ball of foot pain –</strong> Metatarsalgia, also called stone bruise, is an inflammation due to injury or wrong-fitting footwear. Morton’s neuroma is another problem caused due to thickening of tissues between the base of the third and fourth toe. This is more common in women who wear tight or high-heeled shoes.</p>
+
+    <p><strong>Arch Pain –</strong> Plantar Fasciitis also causes pain in the arch of the feet as well as heels. Treatment for both is the same. Fallen Arches (or flat feet) also cause chronic arch pain.</p>
+
+    <p><strong>Toe pain –</strong> Hallux rigidus and Gout (both forms of arthritis) cause pain and swelling in the toes. Bunions and hammertoes are also common causes, where the bony bulge of the toe is affected due to ill-fitting shoes.</p>
+
+    <p><strong>General Pain in any area –</strong> Can be caused due to Tendinitis (inflammation of tendons in the foot) or Neuropathy (nerve damage).</p>
+
+    <div class="media-container">
+      <div class="image-container">
+        <img src="image.png" alt="Foot Therapy" />
+      </div>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+      </div>
+    </div>
+
+   <div style="text-align: center;">
+  <a href="#" class="button">Call for An Appointment</a>
+</div>
+  </div>
+</body>
+</html>

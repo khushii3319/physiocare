@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Vein Clinic - Professional Vein Treatment</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px 0;
+        }
+
+        header {
+            background-color: #26b9a5;
+            color: white;
+            padding: 20px 0;
+            text-align:left;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 26px;
+            margin-bottom: 10px;
+            color: #26b9a5;
+        }
+
+        h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #26b9a5;
+        }
+
+        .highlight {
+            color: #26b9a5;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #000000;
+            margin-bottom: 15px;
+        }
+
+        .info-text {
+            margin-bottom: 15px;
+            color: #000000;
+        }
+
+        /* Therapy Section */
+        .therapy-section {
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 12px;
+        }
+
+        .therapy-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .therapy-details {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .therapy-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .therapy-image video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Treatments */
+        .treatments {
+            margin: 50px 0;
+        }
+
+        .treatment-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .treatment-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+        }
+
+        .treatment-list li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color:#26b9a5;
+            font-weight: bold;
+        }
+
+        .treatment-name {
+            font-weight: bold;
+        }
+
+        .treatment-desc {
+            color: #777;
+            font-style: italic;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 28px;
+            background-color: #26b9a5;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #26b9a5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero,
+            .therapy-content {
+                flex-direction: column;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Vein Clinic</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-image">
+                <img src="vein-treatment-1.jpg" alt="Doctor examining veins" />
+            </div>
+            <div class="hero-content">
+                <h1>Tired of <span class="highlight">leg pain and visible veins?</span></h1>
+                <p class="subtitle">Let our expert team treat your veins and bring back your confidence!</p>
+                <p class="info-text">Our vein clinic specializes in diagnosing and treating various venous conditions such as varicose veins, spider veins, and chronic venous insufficiency. With minimally invasive and advanced procedures, we help patients get back to a healthy, pain-free life.</p>
+                <p class="info-text">Vein issues aren’t just cosmetic—they can lead to serious complications if left untreated. We offer custom treatment plans tailored to your unique condition.</p>
+            </div>
+        </section>
+
+        <!-- Therapy Section -->
+        <section class="therapy-section">
+            <div class="therapy-content">
+                <div class="therapy-details">
+                    <h2>Expert <span class="highlight">Vein Care</span> With Latest Technology</h2>
+                    <p class="info-text">Our clinic uses cutting-edge diagnostic tools and treatment methods, ensuring effective and comfortable experiences. From laser therapy to sclerotherapy, our skilled professionals provide top-notch care in a welcoming environment.</p>
+                    <p class="info-text">Our procedures are quick, often completed in under an hour, with minimal downtime and excellent results. Book a consultation today to begin your journey to healthier legs.</p>
+                </div>
+                <div class="therapy-image">
+                    <video controls>
+                        <source src="vein-clinic-procedure.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- Treatment Section -->
+        <section class="treatments">
+            <h3>Common Treatments We Offer</h3>
+            <ul class="treatment-list">
+                <li>
+                    <span class="treatment-name">Laser Ablation Therapy</span>
+                    <span class="treatment-desc"> - closes off problematic veins using heat.</span>
+                </li>
+                <li>
+                    <span class="treatment-name">Sclerotherapy</span>
+                    <span class="treatment-desc"> - chemical injection to shrink spider veins.</span>
+                </li>
+                <li>
+                    <span class="treatment-name">Microphlebectomy</span>
+                    <span class="treatment-desc"> - removes large surface veins with small incisions.</span>
+                </li>
+                <li>
+                    <span class="treatment-name">Compression Therapy</span>
+                    <span class="treatment-desc"> - uses compression stockings to improve blood flow.</span>
+                </li>
+                <li>
+                    <span class="treatment-name">Ultrasound-Guided Treatment</span>
+                    <span class="treatment-desc"> - for deeper vein disorders using advanced imaging.</span>
+                </li>
+            </ul>
+            <a href="#appointment" class="cta-button">Book Your Consultation</a>
+        </section>
+    </div>
+</body>
+</html>

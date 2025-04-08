@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Rehab Clinic - Expert Injury Recovery</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #26b9a5;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        /* Hero section */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .hero-content {
+            flex: 1;
+            padding: 0 30px;
+            min-width: 300px;
+        }
+        
+        h1 {
+            color: #444;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .highlight {
+            color: #26b9a5;
+        }
+        
+        .subtitle {
+            color: #777;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+        
+        .info-text {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
+        /* Second section with therapist and patient */
+        .therapy-section {
+            margin: 60px 0;
+        }
+        
+        .therapy-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .therapy-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .therapy-image video {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .therapy-details {
+            flex: 1;
+            padding: 0 30px;
+            min-width: 300px;
+        }
+        
+        h2 {
+            color: #444;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        /* Treatments list */
+        .treatments {
+            margin: 40px 0;
+        }
+        
+        .treatments h3 {
+            color: #444;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .treatment-list {
+            list-style: none;
+        }
+        
+        .treatment-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .treatment-list li:before {
+            content: "•";
+            color: #26b9a5;
+            font-size: 24px;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+        
+        .treatment-name {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        
+        .treatment-desc {
+            color: #888;
+            font-style: italic;
+        }
+        
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background-color: #26b9a5;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #1e9b89;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(38, 185, 165, 0.3);
+        }
+        
+        /* Location link */
+        .location-link {
+            color: #26b9a5;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .location-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .hero-content, .therapy-details {
+                padding: 30px 0;
+            }
+            
+            h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Sports Rehab Clinic</div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="hero">
+            <div class="hero-image">
+                <img src="sports-injury.jpg" alt="Athlete undergoing physiotherapy session">
+            </div>
+            <div class="hero-content">
+                <h1>Suffered from a <span class="highlight">sports injury?</span></h1>
+                <p class="subtitle">Get back in the game with expert rehabilitation therapy!</p>
+                
+                <p class="info-text">Whether you're a professional athlete or a weekend warrior, sports injuries can hinder your performance and daily life. Ignoring them or returning to sport too soon can lead to long-term issues.</p>
+                
+                <p class="info-text">From sprains, strains, and ligament tears to post-surgery rehab, our clinic is equipped with trained professionals and advanced techniques to ensure safe and speedy recovery.</p>
+            </div>
+        </section>
+        
+        <section class="therapy-section">
+            <div class="therapy-content">
+                <div class="therapy-details">
+                    <h2>Advanced <span class="highlight">Sports Rehabilitation Center</span></h2>
+                    
+                    <p class="info-text">Our <a href="#locations" class="location-link">Sports Rehabilitation Center</a> offers over 7 years of proven expertise in treating athletic injuries and enhancing physical performance. We focus on restoring strength, flexibility, and mobility through personalized therapy programs.</p>
+                    
+                    <p class="info-text">Our approach includes detailed biomechanical assessments, injury-specific exercises, and continuous progress tracking. Whether it's ACL rehab, ankle sprains, or muscle pulls — we tailor recovery plans for each individual.</p>
+                </div>
+                
+                <div class="therapy-image">
+                    <video controls>
+                        <source src="sports-rehab-video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+        
+        <section class="treatments">
+            <h3>Our Specialized Treatment Methods</h3>
+            
+            <ul class="treatment-list">
+                <li>
+                    <span class="treatment-name">Manual Therapy</span>
+                    <span class="treatment-desc">- hands-on techniques to relieve pain and improve mobility.</span>
+                </li>
+                <li>
+                    <span class="treatment-name">Functional Training</span>
+                    <span class="treatment-desc">- real-life motion exercises to regain athletic strength.</span>
+                </li>
+                <li>
+                    <span class="treatment-name">Cryotherapy and Taping</span>
+                    <span class="treatment-desc">- reduce swelling and stabilize joints during recovery.</span>
+                </li>
+                <li>
+                    <span class="treatment-name">Strength & Conditioning</span>
+                    <span class="treatment-desc">- customized plans to avoid future injuries.</span>
+                </li>
+                <li>
+                    <span class="treatment-name">Sports Massage & Recovery Tools</span>
+                    <span class="treatment-desc">- deep tissue massage, foam rolling, and muscle activation.</span>
+                </li>
+            </ul>
+            
+            <a href="#appointment" class="cta-button">Book Your Recovery Session</a>
+        </section>
+    </div>
+</body>
+</html>
