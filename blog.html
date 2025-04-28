@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs & Resources - Vital Motion Physiotherapy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #12ac8e;
+            --primary-dark: #26b9a5;
+            --primary-light: #e6f7f4;
+            --accent: #fb923c;
+            --accent-dark: #ea7619;
+            --dark: #333333;
+            --light: #ffffff;
+            --gray-light: #f5f5f5;
+            --gray: #e0e0e0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--light);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .page-header {
+            background-color: var(--primary-dark);
+            color: var(--light);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-dark);
+        }
+        
+        /* Featured Article Section with 3D Flip Cards */
+        .featured-section {
+            padding: 4rem 0;
+            background-color: var(--light);
+        }
+        
+        .featured-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .featured-title h2 {
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .featured-title p {
+            color: var(--dark);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .featured-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            perspective: 1000px; /* For 3D effect */
+        }
+        
+        .flip-card {
+            width: 350px;
+            height: 450px;
+            perspective: 1000px;
+        }
+        
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 15px;
+        }
+        
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden; /* Safari */
+            backface-visibility: hidden;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .flip-card-front {
+            background-color: var(--gray-light);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .flip-card-image {
+            height: 60%;
+            overflow: hidden;
+        }
+        
+        .flip-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .flip-card-content {
+            padding: 1.5rem;
+            text-align: left;
+            height: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .flip-card-back {
+            background-color: var(--primary-light);
+            transform: rotateY(180deg);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--dark);
+        }
+        
+        .flip-card-back h3 {
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .flip-card-back p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .read-more {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            background-color: var(--primary);
+            color: var(--light);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .read-more:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .tag {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--light);
+            padding: 0.2rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        /* Interactive Body Map Section */
+        .body-map-section {
+            padding: 4rem 0;
+            background-color: var(--gray-light);
+        }
+        
+        .body-map-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .body-map {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            height: 500px;
+            background-color: var(--light);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .body-svg-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        .body-part {
+            cursor: pointer;
+            fill: var(--primary-light);
+            stroke: var(--primary);
+            stroke-width: 2;
+            transition: fill 0.3s, transform 0.3s;
+        }
+        
+        .body-part:hover {
+            fill: var(--accent);
+            transform: scale(1.05);
+        }
+        
+        .body-map-info {
+            flex: 1;
+            min-width: 300px;
+            padding: 2rem;
+            background-color: var(--light);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        
+        .body-map-info h3 {
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .body-part-icon {
+            margin-right: 0.8rem;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+        }
+        
+        .resource-list {
+            margin-top: 1.5rem;
+            list-style: none;
+        }
+        
+        .resource-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .resource-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        
+        .resource-list a {
+            color: var(--primary-dark);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .resource-list a:hover {
+            color: var(--accent);
+        }
+        
+        /* Blog Grid Section */
+        .blog-section {
+            padding: 4rem 0;
+            background-color: var(--light);
+        }
+        
+        .blog-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .filter-btn {
+            background-color: var(--gray-light);
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary);
+            color: var(--light);
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .blog-card {
+            background-color: var(--gray-light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .blog-card-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .blog-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .blog-card:hover .blog-card-image img {
+            transform: scale(1.1);
+        }
+        
+        .blog-card-content {
+            padding: 1.5rem;
+        }
+        
+        .blog-card-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        .blog-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 0.8rem;
+        }
+        
+        .blog-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        /* Newsletter Section with Animated Background */
+        .newsletter-section {
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+            background-color: var(--primary-dark);
+        }
+        
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        
+        .wave {
+            position: absolute;
+            opacity: 0.2;
+            background: var(--accent);
+            width: 1000px;
+            height: 1000px;
+            border-radius: 43%;
+            animation: wave 20s infinite linear;
+        }
+        
+        .wave:nth-child(2) {
+            background: var(--primary);
+            animation: wave 15s infinite linear;
+        }
+        
+        .wave:nth-child(3) {
+            background: var(--light);
+            animation: wave 25s infinite linear;
+        }
+        
+        @keyframes wave {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .newsletter-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: var(--light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-content h2 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .newsletter-content p {
+            margin-bottom: 2rem;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-size: 1rem;
+        }
+        
+        .newsletter-btn {
+            padding: 0 1.5rem;
+            background-color: var(--accent);
+            color: var(--light);
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .newsletter-btn:hover {
+            background-color: var(--accent-dark);
+        }
+        
+        /* Knowledge Quiz Section */
+        .quiz-section {
+            padding: 4rem 0;
+            background-color: var(--gray-light);
+            text-align: center;
+        }
+        
+        .quiz-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: var(--light);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .quiz-header {
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 1.5rem;
+        }
+        
+        .quiz-content {
+            padding: 2rem;
+        }
+        
+        .quiz-question {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        
+        .quiz-options {
+            list-style: none;
+            text-align: left;
+        }
+        
+        .quiz-option {
+            margin-bottom: 1rem;
+        }
+        
+        .quiz-option label {
+            display: block;
+            padding: 1rem;
+            background-color: var(--gray-light);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .quiz-option input {
+            display: none;
+        }
+        
+        .quiz-option input:checked + label {
+            background-color: var(--primary-light);
+            border: 2px solid var(--primary);
+        }
+        
+        .quiz-option label:hover {
+            background-color: var(--primary-light);
+        }
+        
+        .quiz-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        
+        .quiz-btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .quiz-next-btn {
+            background-color: var(--primary);
+            color: var(--light);
+        }
+        
+        .quiz-next-btn:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .quiz-skip-btn {
+            background-color: var(--gray);
+            color: var(--dark);
+        }
+        
+        .quiz-skip-btn:hover {
+            background-color: #d0d0d0;
+        }
+        
+        .quiz-result {
+            padding: 2rem;
+            text-align: center;
+            display: none;
+        }
+        
+        .quiz-score {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .quiz-feedback {
+            margin-bottom: 1.5rem;
+        }
+        
+        .quiz-restart-btn {
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary);
+            color: var(--light);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .quiz-restart-btn:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-input {
+                border-radius: 5px;
+                margin-bottom: 1rem;
+            }
+            
+            .newsletter-btn {
+                border-radius: 5px;
+                padding: 0.8rem;
+            }
+            
+            .flip-card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="page-header">
+        <div class="container">
+            <h1>Blogs & Resources</h1>
+            <p>Enhance your understanding of physiotherapy with our expert articles, interactive tools, and educational resources designed to support your journey to optimal health.</p>
+        </div>
+    </section>
+    
+    <section class="featured-section">
+        <div class="container">
+            <div class="featured-title">
+                <h2>Featured Articles</h2>
+                <p>Hover over any card to discover more about our most popular and informative content</p>
+            </div>
+            
+            <div class="featured-grid">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="flip-card-image">
+                                <img src="/api/placeholder/350/270" alt="Understanding Back Pain">
+                            </div>
+                            <div class="flip-card-content">
+                                <span class="tag">Back Health</span>
+                                <h3>Understanding Lower Back Pain: Causes and Solutions</h3>
+                                <p>Published: April 10, 2025</p>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Understanding Lower Back Pain</h3>
+                            <p>Explore the root causes of lower back pain and discover evidence-based approaches to finding relief. Our experts break down the anatomy of back pain and provide actionable strategies for healing and prevention.</p>
+                            <a href="#" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="flip-card-image">
+                                <img src="/api/placeholder/350/270" alt="Post-Surgery Recovery">
+                            </div>
+                            <div class="flip-card-content">
+                                <span class="tag">Rehabilitation</span>
+                                <h3>Optimizing Post-Surgery Recovery with Physiotherapy</h3>
+                                <p>Published: March 27, 2025</p>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Post-Surgery Recovery</h3>
+                            <p>Learn how targeted physiotherapy interventions can significantly improve recovery outcomes following surgery. This comprehensive guide outlines timeline expectations and techniques for regaining function and mobility.</p>
+                            <a href="#" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="flip-card-image">
+                                <img src="/api/placeholder/350/270" alt="Sports Injury Prevention">
+                            </div>
+                            <div class="flip-card-content">
+                                <span class="tag">Sports Medicine</span>
+                                <h3>Preventing Sports Injuries: A Guide for Active Individuals</h3>
+                                <p>Published: April 5, 2025</p>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Sports Injury Prevention</h3>
+                            <p>Discover proactive strategies to minimize injury risk while maintaining peak performance. Our physiotherapists share professional insights on proper warm-up routines, training progressions, and recovery techniques.</p>
+                            <a href="#" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+   
+                
+                
+                
+      
+    
+    <section class="blog-section">
+        <div class="container">
+            <h2 class="section-title">Latest Blog Articles</h2>
+            
+           
+            
+            <div class="blog-grid">
+                <div class="blog-card" data-category="pain-management">
+                    <div class="blog-card-image">
+                        <img src="/api/placeholder/400/300" alt="Neck Pain Relief">
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <span>April 15, 2025</span>
+                            <span>Dr. Sarah Chen</span>
+                        </div>
+                        <h3>5 Effective Neck Pain Relief Strategies for Office Workers</h3>
+                        <p>Discover practical techniques to alleviate neck tension that results from prolonged desk work.</p>
+                        <div class="blog-tags">
+                            <span class="tag">Neck Pain</span>
+                            <span class="tag">Office Ergonomics</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="blog-card" data-category="exercises">
+                    <div class="blog-card-image">
+                        <img src="/api/placeholder/400/300" alt="Core Strengthening">
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <span>April 12, 2025</span>
+                            <span>Mark Wilson, PT</span>
+                        </div>
+                        <h3>Core Strengthening Exercises for Better Posture and Balance</h3>
+                        <p>Learn how targeting your core muscles can transform your posture and enhance overall stability.</p>
+                        <div class="blog-tags">
+                            <span class="tag">Exercise</span>
+                            <span class="tag">Core Strength</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="blog-card" data-category="rehabilitation">
+                    <div class="blog-card-image">
+                        <img src="/api/placeholder/400/300" alt="Knee Rehabilitation">
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <span>April 8, 2025</span>
+                            <span>Dr. James Lee</span>
+                        </div>
+                        <h3>A Comprehensive Guide to Knee Rehabilitation After Surgery</h3>
+                        <p>Detailed timeline and exercise progression for optimal knee recovery following surgical intervention.</p>
+                        <div class="blog-tags">
+                            <span class="tag">Rehabilitation</span>
+                            <span class="tag">Knee Health</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="blog-card" data-category="wellness">
+                    <div class="blog-card-image">
+                        <img src="/api/placeholder/400/300" alt="Sleep Posture">
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <span>April 5, 2025</span>
+                            <span>Emily Johnson, PT</span>
+                        </div>
+                        <h3>How Your Sleep Position Affects Your Musculoskeletal Health</h3>
+                        <p>Understanding the relationship between sleep postures and morning pain or stiffness.</p>
+                        <div class="blog-tags">
+                            <span class="tag">Wellness</span>
+                            <span class="tag">Sleep Health</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="blog-card" data-category="pain-management">
+                    <div class="blog-card-image">
+                        <img src="/api/placeholder/400/300" alt="Migraine Management">
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <span>April 5, 2025</span>
+                            <span>Emily Johnson, PT</span>
+                        </div>
+                        <h3>How Your Sleep Position Affects Your Musculoskeletal Health</h3>
+                        <p>Understanding the relationship between sleep postures and morning pain or stiffness.</p>
+                        <div class="blog-tags">
+                            <span class="tag">Wellness</span>
+                            <span class="tag">Sleep Health</span>
+                        </div>
+                    </div>
+                </div>
+                

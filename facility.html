@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facility Tour - Vital Motion Physiotherapy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #12ac8e;
+            --primary-dark: #26b9a5;
+            --accent: #fb923c;
+            --dark: #333333;
+            --light: #ffffff;
+            --gray-light: #f5f5f5;
+            --gray: #e0e0e0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--light);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .page-header {
+            background-color: var(--primary-dark);
+            color: var(--light);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-dark);
+        }
+        
+        /* Facility Overview Section */
+        .facility-overview {
+            background-color: var(--light);
+            padding: 4rem 0;
+        }
+        
+        .overview-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .overview-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .overview-text h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .overview-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .overview-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Photo Slideshow */
+        .slideshow-section {
+            padding: 4rem 0;
+            background-color: var(--gray-light);
+        }
+        
+        .slideshow-container {
+            max-width: 900px;
+            position: relative;
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .slide {
+            display: none;
+            width: 100%;
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+        
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0,0,0,0.7);
+            color: var(--light);
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 16px;
+            color: var(--light);
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.3);
+            cursor: pointer;
+        }
+        
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+        
+        .dot-container {
+            text-align: center;
+            padding: 1rem 0;
+        }
+        
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: var(--gray);
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        
+        .active-dot, .dot:hover {
+            background-color: var(--accent);
+        }
+        
+        /* Features Section */
+        .features-section {
+            padding: 4rem 0;
+            background-color: var(--light);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: var(--gray-light);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+            font-size: 1.5rem;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 0;
+            background-color: var(--primary-dark);
+            color: var(--light);
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-content p {
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent);
+            color: var(--light);
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            background-color: #e67e22;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .slide img {
+                height: 350px;
+            }
+            
+            .prev, .next {
+                padding: 10px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="page-header">
+        <div class="container">
+            <h1>Facility Tour</h1>
+            <p>Explore our state-of-the-art physiotherapy center designed to maximize your comfort and recovery. Our modern facilities are equipped with the latest technology to ensure optimal care.</p>
+        </div>
+    </section>
+    
+    <section class="facility-overview">
+        <div class="container">
+            <h2 class="section-title">Welcome to Vital Motion Physiotherapy</h2>
+            <div class="overview-content">
+                <div class="overview-text">
+                    <h3>A Healing Environment</h3>
+                    <p>Our facility is thoughtfully designed to create a calming and therapeutic environment for your healing journey. With spacious treatment rooms, cutting-edge equipment, and comfortable waiting areas, we've created a space where healing and recovery are prioritized.</p>
+                    <br>
+                    <p>The Vital Motion difference is evident in every detail of our facility, from the ergonomic treatment tables to the specialized rehabilitation equipment. Our center combines clinical excellence with a warm, welcoming atmosphere to support your path to wellness.</p>
+                </div>
+                <div class="overview-image">
+                    <img src="/api/placeholder/800/500" alt="Vital Motion Physiotherapy Facility Reception">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="slideshow-section">
+        <div class="container">
+            <h2 class="section-title">Explore Our Facilities</h2>
+            <div class="slideshow-container">
+                <div class="slide active">
+                    <img src="/api/placeholder/900/600" alt="Reception Area">
+                    <div class="slide-caption">
+                        <h3>Welcoming Reception Area</h3>
+                        <p>Our bright and inviting reception area ensures a comfortable start to your visit.</p>
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    <img src="/api/placeholder/900/600" alt="Treatment Room">
+                    <div class="slide-caption">
+                        <h3>Private Treatment Rooms</h3>
+                        <p>Spacious and quiet treatment rooms equipped with state-of-the-art technology.</p>
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    <img src="/api/placeholder/900/600" alt="Exercise Area">
+                    <div class="slide-caption">
+                        <h3>Rehabilitation Gym</h3>
+                        <p>Our fully equipped rehabilitation gym helps you regain strength and mobility.</p>
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    <img src="/api/placeholder/900/600" alt="Specialized Equipment">
+                    <div class="slide-caption">
+                        <h3>Specialized Equipment</h3>
+                        <p>Advanced therapeutic equipment for targeted treatment and faster recovery.</p>
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    <img src="/api/placeholder/900/600" alt="Consultation Room">
+                    <div class="slide-caption">
+                        <h3>Consultation Rooms</h3>
+                        <p>Comfortable spaces for detailed assessments and progress discussions.</p>
+                    </div>
+                </div>
+                
+                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            </div>
+            
+            <div class="dot-container">
+                <span class="dot active-dot" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Facility Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">✓</div>
+                    <h3>Advanced Equipment</h3>
+                    <p>Our facility is equipped with the latest physiotherapy technology, including ultrasound, electrical stimulation, laser therapy, and specialized rehabilitation equipment.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">✓</div>
+                    <h3>Private Treatment Rooms</h3>
+                    <p>Enjoy peace and privacy during your treatment sessions in our comfortable, soundproofed rooms designed for one-on-one care.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">✓</div>
+                    <h3>Rehabilitation Gym</h3>
+                    <p>Our spacious rehabilitation gym features specialized equipment for strength training, balance exercises, and functional movement practice.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">✓</div>
+                    <h3>Relaxation Area</h3>
+                    <p>Before or after your session, unwind in our calming relaxation area with comfortable seating and refreshments.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">✓</div>
+                    <h3>Accessibility</h3>
+                    <p>Our facility is fully accessible with ramps, wide doorways, accessible washrooms, and plenty of parking including designated accessible spaces.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">✓</div>
+                    <h3>Sanitization Protocols</h3>
+                    <p>We maintain the highest standards of cleanliness with rigorous sanitization protocols for all equipment and treatment areas between patients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Experience Our Facility In Person</h2>
+                <p>We'd love to show you around our state-of-the-art facility and discuss how our services can help you achieve your health and wellness goals.</p>
+                <a href="#" class="btn">Schedule a Tour</a>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // Slideshow functionality
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active-dot'));
+            
+            slides[n].classList.add('active');
+            dots[n].classList.add('active-dot');
+        }
+        
+        function changeSlide(n) {
+            slideIndex += n;
+            
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+            if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            }
+            
+            showSlide(slideIndex);
+        }
+        
+        function currentSlide(n) {
+            slideIndex = n;
+            showSlide(slideIndex);
+        }
+        
+        // Auto slideshow
+        function autoSlide() {
+            changeSlide(1);
+        }
+        
+        // Start automatic slideshow - change slides every 5 seconds
+        setInterval(autoSlide, 5000);
+    </script>
+</body>
+</html>
