@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -160,19 +162,25 @@ header {
   color: var(--primary-color);
   background-color: var(--primary-color-light);
   border-radius: 5px;
+  background-image: none;
+ 
+  
 }
 
 .header__form input::placeholder {
   color: var(--primary-color);
+
 }
 
 .form__btn {
-  background-color: var(--primary-color);
+  background-color:var(--primary-color-dark);
   transition: 0.3s;
+  text-align: center;
+
 }
 
 .form__btn:hover {
-  background-color: var(--primary-color-dark);
+  background-color:#fb923c;
 }
 
 .header__form h4 {
@@ -190,8 +198,10 @@ header {
 }
 
 .therapy__image img {
-  max-width: 100%;
+  max-width: 98%;
   border-radius: 10px;
+  height: 600px;
+  border-radius: 0;
 }
 
 .therapy__content {
@@ -200,6 +210,8 @@ header {
 
 .therapy__content h2 {
   margin-bottom: 1rem;
+ text-align: center;
+  color: #0d846c;
 }
 
 .therapy__content p {
@@ -219,7 +231,12 @@ header {
   max-width: 600px;
   color: var(--text-light);
 }
-
+label {
+  color: #fb923c; 
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+}
 .service__btn {
   padding: 0.75rem 1rem;
   outline: none;
@@ -331,6 +348,7 @@ header {
   grid-template-columns: 80px auto;
   gap: 2rem;
 }
+
 
 .why__grid span {
   display: inline-flex;
@@ -459,6 +477,7 @@ header {
   color: var(--primary-color);
 }
 
+
 .footer__col h3 span {
   color: var(--secondary-color);
 }
@@ -488,6 +507,95 @@ header {
 .footer__bar {
   background-color: var(--primary-color);
 }
+.btn {
+  background: var(--primary-color); /* blue gradient 💙 */
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  
+  transition: 0.4s ease;
+ 
+}
+
+.btn:hover {
+  background: #fb923c; /* orange gradient 🧡 */
+
+  transform: translateY(-2px);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* gives even spacing between items */
+  padding: 20px;
+}
+.service__btn {
+  font-size: 20px;
+  padding: 15px 30px;
+  background-color: var(--primary-color);;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.service__btn:hover {
+  background-color: #fb923c;
+}
+
+
+input,
+select {
+  /* This matches your input placeholder color */
+  
+  
+  
+ 
+ 
+  width: 100%;
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%2300bfa6" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px 16px;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--primary-color);
+  background-color: var(--primary-color-light);
+  border-radius: 5px;
+}
+
+/* Change placeholder option color */
+select option[value=""] {
+  color: #00bfa6;  /* Same as your input placeholder */
+}
+
+/* Optional: when a real option is selected */
+select:valid {
+  color: var(--primary-color); /* or keep it teal if you want! */
+}
+
+
+/* Remove that lonely label since you’re using placeholder now */
+label {
+  display: none;
+}
+
+/* Optional: make the dropdown arrow cuter 🧚‍♀️ */
+select {
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%2300bfa6" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px 16px;
+}
+
 
 .footer__bar__content {
   max-width: var(--max-width);
@@ -606,7 +714,7 @@ header {
           <li class="link"><a href="#pages">Therapists</a></li>
           <li class="link"><a href="#blog">Why Us</a></li>
         </ul>
-        <button class="btn">Contact Us</button>
+   
       </nav>
       <div class="section__container header__container" id="home">
         <div class="header__content">
@@ -616,16 +724,27 @@ header {
             mobility, and independence. Our evidence-based approach combines manual therapy 
             with cutting-edge rehabilitation techniques.
           </p>
-          <button class="btn">View Treatments</button>
+         
         </div>
         <div class="header__form">
           <form>
             <h4>Schedule Consultation</h4>
-            <input type="text" placeholder="First Name" />
-            <input type="text" placeholder="Last Name" />
-            <input type="text" placeholder="Injury/Concern" />
-            <input type="text" placeholder="Phone No." />
-            <button class="btn form__btn">Request Appointment</button>
+            <input type="text" placeholder="First Name" style="text-transform: uppercase;" />
+            <input type="text" placeholder="Last Name" style="text-transform: uppercase;" />
+            <label for="injury"></label>
+            <select id="injury" name="injury">
+              <option value="">SELECT YOUR INJURY</option>
+              <option value="SHOULDER CLINIC">SHOULDER CLINIC</option>
+              <option value="SPINE CLINIC ">SPINE CLINIC</option>
+              <option value="VEIN CLINIC">VEIN CLINIC</option>
+              <option value="OSTEOPATHY">OSTEOPATHY</option>
+              <option value="SPORTS REHABILITATION">SPORTS REHABILITATION</option>
+            </select>
+            
+            <input type="tel" placeholder="Phone No." maxlength="10" pattern="\d{10}" inputmode="numeric" title="Enter 10 digit phone number" style="text-transform: uppercase;" />
+
+            <a href="appointment.html" class="btn form__btn">Request Appointment</a>
+
           </form>
         </div>
       </div>
@@ -633,19 +752,51 @@ header {
 
 <!-- New Section: What is Therapy? -->
 <section class="section__container therapy__container" id="therapy">
-    <div class="therapy__image">
-      <img src="https://physioderma.co.uk/cdn/shop/collections/physio-resized.jpg?v=1741205545&width=1500" alt="therapy" />
-    </div>
-    <div class="therapy__content">
-      <h2 class="section__header">What is Therapy?</h2>
-      <p>Physiotherapy is a branch of healthcare that focuses on restoring and improving a person's physical movement and function through non-invasive methods like exercise, manual therapy, and education. It plays a crucial role in the recovery and rehabilitation of individuals suffering from injuries, chronic pain, physical disabilities, or conditions affecting the muscles, bones, nerves, or lungs. Physiotherapists assess each patient’s condition and design personalized treatment plans to reduce pain, improve strength and flexibility, and prevent future injuries. It is widely used in hospitals, sports centers, and rehabilitation clinics, helping people of all ages lead healthier, more active lives without relying on medication or surgery.</p>
-      
-      <!-- Button wrapped in anchor tag -->
+  <div class="therapy__image">
+    <img src="whatistherapy.jpg"alt="therapy" />
+  </div>
+  <div class="therapy__content">
+    <h2 class="section__header">What is Therapy?</h2>
+    <p>
+      <strong style="color: #0f766e;">Physiotherapy</strong> is a branch of healthcare that focuses on 
+      <em>restoring and improving physical movement and function</em> through non-invasive techniques like 
+      <strong style="color: #0f766e;">exercise</strong>, 
+      <strong style="color: #0f766e;">manual therapy</strong>, and 
+      <strong style="color: #0f766e;">patient education</strong>.
+    </p>
+    
+    <p>
+      It plays a vital role in the <strong style="color: #0f766e;">recovery and rehabilitation</strong> of individuals with injuries, chronic pain, physical disabilities, or conditions affecting the 
+      <em>muscles, bones, nerves, or lungs</em>.
+    </p>
+    
+    <p>
+      Physiotherapists assess each person’s unique condition and craft 
+      <strong style="color:#0f766e;">personalized treatment plans</strong> to:
+    </p>
+    
+    <ul style="color: #0f766e">
+      <li> Reduce pain and discomfort</li>
+      <li> Improve strength, flexibility, and mobility</li>
+      <li> Prevent future injuries</li>
+    </ul>
+    
+    <p>
+      Whether in hospitals, sports centers, or home care — physiotherapy empowers people of all ages to live 
+      <em>healthier, more active lives</em> without depending on medication or surgery!
+    </p>
+    
+
+    
+    <!-- Centered Button -->
+    <div align ="center">
       <a href="learn.html">
         <button class="btn">Learn More</button>
       </a>
     </div>
-  </section>
+  </div>
+</section>
+
   
 
     <!-- Existing Sections -->
@@ -658,38 +809,48 @@ header {
             and recovery goals.
           </p>
         </div>
-        <a href="service.html"> <button class="service__btn">Ask About Treatments</button></a>
+  
        
       </div>
       <div class="service__grid">
         <div class="service__card">
-          <span><i class="ri-user-heart-line"></i></span>
-          <h4>Movement Assessment</h4>
+          <a href="spine-clinic.html">
+            <span><i class="ri-user-heart-line"></i></span>
+          </a>
+          
+          <h4>Spine Clinic</h4>
           <p>
             Detailed biomechanical analysis and functional movement screening 
             to identify limitations and create personalized treatment plans.
           </p>
-          <a href="#">Learn More</a>
+          <a href="spine-clinic.html">Learn More</a>
         </div>
         <div class="service__card">
-          <span><i class="ri-body-scan-line"></i></span>
-          <h4>Rehabilitation</h4>
+          <a href="shoulder-clinic.html"> <span><i class="ri-body-scan-line"></i></span></a>
+          <h4>Shoulder Clinic</h4>
           <p>
             Targeted therapeutic exercises and manual therapy techniques 
             to restore mobility and prevent future injuries.
           </p>
-          <a href="#">Learn More</a>
+          <a href="shoulder-clinic.html">Learn More</a>
         </div>
         <div class="service__card">
-          <span><i class="ri-run-line"></i></span>
-          <h4>Sports Recovery</h4>
+          <a href="vein-clinic.html"> <span><i class="ri-run-line"></i></span></a>
+          <h4>Vein Clinic</h4>
           <p>
             Specialized programs for athletes focusing on injury prevention, 
             performance enhancement, and rapid recovery protocols.
           </p>
-          <a href="#">Learn More</a>
+          <a href="vein-clinic.html">Learn More</a>
         </div>
       </div>
+      <br> 
+      <div style="text-align: center; margin-top: 20px;">
+        <a href="service.html">
+          <button class="service__btn">View all Services</button>
+        </a>
+      </div>
+      
     </section>
 
     <section class="section__container about__container" id="about">
@@ -730,26 +891,29 @@ header {
         <div class="why__grid">
           <span><i class="ri-hand-heart-line"></i></span>
           <div>
-            <h4>Manual Therapy</h4>
+            <a href="feedback.html">
+              <h4>Patient Feedback</h4>
+            </a>
             <p>
-              Expert hands-on techniques to improve joint mobility, 
-              reduce muscle tension, and enhance tissue healing
+              Explore real testimonials and recovery stories from patients who found renewed strength and comfort through our care.
             </p>
           </div>
           <span><i class="ri-line-chart-line"></i></span>
           <div>
-            <h4>Progressive Rehabilitation</h4>
+            <a href="facility.html">
+              <h4>Facility Tour</h4>
+            </a>
             <p>
-              Customized exercise programs that evolve with your recovery, 
-              ensuring continued progress and lasting results
+              Take a virtual or in-person tour of our healing environment—modern, calming, and thoughtfully designed to support your well-being.
             </p>
           </div>
           <span><i class="ri-team-line"></i></span>
           <div>
-            <h4>Holistic Care</h4>
+            <a href="blog.html">
+              <h4>Blogs & Resources</h4>
+            </a>
             <p>
-              Comprehensive treatment plans addressing physical, 
-              psychological, and lifestyle factors affecting recovery
+              Stay informed with expert-written blogs, recovery tips, wellness guides, and the latest updates in rehabilitation and self-care.
             </p>
           </div>
         </div>
