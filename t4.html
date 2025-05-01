@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Anjali Shah - Senior Physiotherapist & Rehabilitation Specialist</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        header {
+            background: linear-gradient(135deg,#0d846c, #26d0ce);
+            background: linear-gradient(135deg, );
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .doctor-profile {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .profile-img {
+            flex: 1.3;
+            min-width: 400px;
+        }
+        .profile-img img {
+            width: 100%;
+            height: 80%;
+            display: block;
+        }
+        .profile-content {
+            flex: 2;
+            min-width: 300px;
+            padding: 30px;
+        }
+        h1 {
+            color: #f2f4f6;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #26d0ce;
+         
+           
+            border-bottom: 2px solid #26d0ce;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        .qualifications {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .specialties, .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .contact-info {
+            background:#ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        footer {
+            background:#26d0ce;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        @media (max-width: 768px) {
+            .doctor-profile {
+                flex-direction: column;
+            }
+            .profile-img, .profile-content {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Dr. Anjali Shah</h1>
+            <p>Senior Physiotherapist & Rehabilitation Specialist</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="doctor-profile">
+            <div class="profile-img">
+                <img src="anjali.jpeg" alt="Dr. Anjali Shah">
+            </div>
+            <div class="profile-content">
+                <h2>About Dr. Anjali Shah</h2>
+                <p>Dr. Anjali Shah is a highly respected physiotherapist in Ahmedabad, recognized for her work in complex rehabilitation cases and long-term recovery programs. With over 12 years of clinical experience, she combines empathy and expertise to guide patients through healing with confidence and care.</p>
+                
+                <div class="qualifications">
+                    <h3>Professional Qualifications</h3>
+                    <ul>
+                        <li>Master of Physiotherapy (MPT) in Neurological Rehabilitation</li>
+                        <li>Bachelor of Physiotherapy (BPT) from Gujarat University</li>
+                        <li>Certified in Gait Training and Stroke Rehab</li>
+                        <li>Advanced Certification in Post-Surgical Physiotherapy</li>
+                        <li>Member of Indian Association of Physiotherapists (IAP)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Areas of Expertise</h2>
+            <div class="specialties">
+                <div class="card">
+                    <h3>Neurological Rehab</h3>
+                    <ul>
+                        <li>Stroke Recovery</li>
+                        <li>Parkinson’s Rehab</li>
+                        <li>Balance & Coordination Training</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Post-Surgical Rehab</h3>
+                    <ul>
+                        <li>Joint Replacement Recovery</li>
+                        <li>Spine Surgery Rehabilitation</li>
+                        <li>Orthopedic Injury Healing</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Pediatric Therapy</h3>
+                    <ul>
+                        <li>Developmental Delay</li>
+                        <li>Cerebral Palsy</li>
+                        <li>Motor Skill Training</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Treatment Techniques</h2>
+            <div class="services">
+                <div class="card">
+                    <h3>Neuro-Muscular Re-Education</h3>
+                    <p>Improving brain-to-muscle connections for functional recovery.</p>
+                </div>
+                <div class="card">
+                    <h3>Gait & Mobility Training</h3>
+                    <p>Personalized walking retraining for stroke and surgery patients.</p>
+                </div>
+                <div class="card">
+                    <h3>Strengthening Programs</h3>
+                    <p>Tailored exercises to regain strength and independence.</p>
+                </div>
+                <div class="card">
+                    <h3>Manual Therapy</h3>
+                    <p>Hands-on treatment to improve mobility, posture, and pain relief.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-info">
+            <h2>Contact Details</h2>
+            <p><strong>Clinic Address:</strong> Restore Wellness Clinic, Satellite, Ahmedabad - 380015</p>
+            <p><strong>Phone:</strong> +91 99876 54321</p>
+            <p><strong>Email:</strong> dr.anjali@example.com</p>
+            <p><strong>Consultation Hours:</strong> Monday-Saturday (10:00 AM - 6:00 PM)</p>
+            <p><strong>Emergency Contact:</strong> On prior appointment only</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Dr. Anjali Shah | Physiotherapist Ahmedabad. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
