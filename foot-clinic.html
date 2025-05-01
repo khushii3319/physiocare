@@ -1,154 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Foot Clinic</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foot Clinic - Expert Foot & Ankle Care</title>
+    <style>
+        /* CSS remains unchanged (layout, style, color, spacing) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #ffffff;
-      color: #333;
-      line-height: 1.7;
-    }
+        body {
+            background-color: #f9f9f9;
+            color: #555;
+            line-height: 1.6;
+        }
 
-    header {
-      background-color: #2bbbad;
-      padding: 2rem 1.5rem;
-      color: white;
-      font-size: 2rem;
-      font-weight: bold;
-      text-align: left;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 2.5rem 1.5rem;
-    }
+        header {
+            background-color: #26b9a5;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
 
-    h2 {
-      color: #2bbbad;
-      margin-bottom: 1rem;
-      font-size: 1.8rem;
-    }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
 
-    p {
-      margin-bottom: 1.2rem;
-      font-size: 1.05rem;
-      color: #555;
-    }
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin: 40px 0;
+        }
 
-    strong {
-      color: #000000;
-    }
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+        }
 
-    .media-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin: 3rem 0;
-      justify-content: center;
-    }
+        .hero-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
 
-    .image-container,
-    .video-container {
-      flex: 1 1 400px;
-      max-width: 500px;
-    }
+        .hero-content {
+            flex: 1;
+            padding: 0 30px;
+            min-width: 300px;
+        }
 
-    .image-container img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
+        h1 {
+            color: #444;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
 
-    iframe {
-      width: 100%;
-      height: 300px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      border: none;
-    }
+        .highlight {
+            color: #26b9a5;
+        }
 
-    .button {
-      display: inline-block;
-      background-color: #2bbbad;
-      color: white;
-      padding: 1rem 2.2rem;
-      border-radius: 30px;
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      margin-top: 2rem;
-    }
+        .subtitle {
+            color: #777;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
 
-    .button:hover {
-      background-color: #159c91;
-    }
+        .info-text {
+            margin-bottom: 20px;
+            color: #666;
+        }
 
-    @media (max-width: 768px) {
-      header {
-        font-size: 1.6rem;
-      }
+        .therapy-section {
+            margin: 60px 0;
+        }
 
-      h2 {
-        font-size: 1.5rem;
-      }
+        .therapy-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
 
-      .media-container {
-        flex-direction: column;
-        align-items: center;
-      }
+        .therapy-image {
+            flex: 1;
+            min-width: 300px;
+        }
 
-      iframe {
-        height: 220px;
-      }
-    }
-  </style>
+        .therapy-image video {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .therapy-details {
+            flex: 1;
+            padding: 0 30px;
+            min-width: 300px;
+        }
+
+        h2 {
+            color: #444;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .treatments {
+            margin: 40px 0;
+        }
+
+        .treatments h3 {
+            color: #444;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .treatment-list {
+            list-style: none;
+        }
+
+        .treatment-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .treatment-list li:before {
+            content: "•";
+            color: #26b9a5;
+            font-size: 24px;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        .treatment-name {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .treatment-desc {
+            color: #888;
+            font-style: italic;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #26b9a5;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #1e9b89;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(38, 185, 165, 0.3);
+        }
+
+        .location-link {
+            color: #26b9a5;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .location-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content, .therapy-details {
+                padding: 30px 0;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    Foot Clinic
-  </header>
+    <header>
+        <div class="container">
+            <div class="logo">Foot Clinic</div>
+        </div>
+    </header>
 
-  <div class="container">
-    <p>Your feet carry you around all day, whether walking, running, jumping, playing sports, or tip-toeing around the fridge at midnight. But you never think about them until they start hurting. Here, we recognize the importance of keeping your foot flexible and pain-free.</p>
+    <div class="container">
+        <section class="hero">
+            <div class="hero-image">
+                <img src="footclinic1.jpeg" alt="Physiotherapist treating a foot pain patient">
+            </div>
+            <div class="hero-content">
+                <h1>Suffering from <span class="highlight">foot or ankle pain?</span></h1>
+                <p class="subtitle">Our Foot Clinic helps you stand, walk, and live pain-free!</p>
 
-    <h2>Know Your Type of Pain</h2>
+                <p class="info-text">Whether it's plantar fasciitis, Achilles tendinitis, flat feet, or a sprain, foot and ankle issues can make even basic movements uncomfortable. Left untreated, they can impact your posture, gait, and overall mobility.</p>
 
-    <p><strong>Heel pain –</strong> It may be caused by Plantar Fasciitis (inflammation of tissues in the heel) or an impact injury that feels like you're walking on a pebble. Heel spurs (abnormal bone growth at the bottom of your heel) can also be a cause, although it does not always hurt unless you have flat feet or high arches.</p>
+                <p class="info-text">We specialize in conditions like Heel Spurs, Shin Splints, Ankle Instability, and Arthritis-related foot pain. Our team ensures the right diagnosis and structured therapy to get you back on your feet — literally!</p>
+            </div>
+        </section>
 
-    <p><strong>Ball of foot pain –</strong> Metatarsalgia, also called stone bruise, is an inflammation due to injury or wrong-fitting footwear. Morton’s neuroma is another problem caused due to thickening of tissues between the base of the third and fourth toe. This is more common in women who wear tight or high-heeled shoes.</p>
+        <section class="therapy-section">
+            <div class="therapy-content">
+                <div class="therapy-details">
+                    <h2>Expert <span class="highlight">Foot & Ankle Care</span></h2>
 
-    <p><strong>Arch Pain –</strong> Plantar Fasciitis also causes pain in the arch of the feet as well as heels. Treatment for both is the same. Fallen Arches (or flat feet) also cause chronic arch pain.</p>
+                    <p class="info-text">Our <a href="#locations" class="location-link">Foot Clinic</a> offers over 7 years of dedicated service treating foot disorders with customized plans for both acute injuries and chronic conditions. Many of our patients recover without invasive interventions using guided rehab and consistent therapy.</p>
 
-    <p><strong>Toe pain –</strong> Hallux rigidus and Gout (both forms of arthritis) cause pain and swelling in the toes. Bunions and hammertoes are also common causes, where the bony bulge of the toe is affected due to ill-fitting shoes.</p>
+                    <p class="info-text">We focus on gait correction, pressure points, biomechanical alignment, and strengthening. Based on the root cause of your foot or ankle issue, we tailor treatment protocols using a blend of proven methods:</p>
+                </div>
 
-    <p><strong>General Pain in any area –</strong> Can be caused due to Tendinitis (inflammation of tendons in the foot) or Neuropathy (nerve damage).</p>
+                <div class="therapy-image">
+                    <video controls>
+                        <source src="footclinicvideo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
 
-    <div class="media-container">
-      <div class="image-container">
-        <img src="image.png" alt="Foot Therapy" />
-      </div>
+        <section class="treatments">
+            <h3>Our Foot & Ankle Treatment Services</h3>
 
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
-      </div>
+            <ul class="treatment-list">
+                <li>
+                    <span class="treatment-name">Manual mobilization</span>
+                    <span class="treatment-desc">- improving joint flexibility and reducing soft tissue stiffness.</span>
+                </li>
+                <li>
+                    <span class="treatment-name">Stretching and strengthening routines</span>
+                </li>
+                <li>
+                    <span class="treatment-name">Gait and balance training</span>
+                    <span class="treatment-desc">- correcting abnormal walking patterns and fall prevention.</span>
+                </li>
+                <li>
+                    <span class="treatment-name">Orthotic consultation</span>
+                    <span class="treatment-desc">- custom insoles and footwear support for structural issues.</span>
+                </li>
+                <li>
+                    <span class="treatment-name">Cold/Heat therapy & Taping</span>
+                    <span class="treatment-desc">- to reduce inflammation and support injured ligaments.</span>
+                </li>
+            </ul>
+
+            
+        </section>
     </div>
-
-   <div style="text-align: center;">
-  <a href="#" class="button">Call for An Appointment</a>
-</div>
-  </div>
 </body>
 </html>
