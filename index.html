@@ -140,6 +140,7 @@ header {
   color: var(--primary-color-light);
 }
 
+
 .header__form {
   width: 100%;
   max-width: 350px;
@@ -319,7 +320,7 @@ label {
 }
 
 .about__image img {
-  max-width: 400px;
+  max-width:max-content;
   margin: auto;
   border-radius: 10px;
 }
@@ -708,11 +709,12 @@ select {
         <div class="nav__logo">Physio<span>Care</span></div>
         <ul class="nav__links">
           <li class="link"><a href="#home">Home</a></li>
-          <li class="link"><a href="#therapy">What is Therapy?</a></li>
-          <li class="link"><a href="#about">About Us</a></li>
+ 
           <li class="link"><a href="#service">Services</a></li>
-          <li class="link"><a href="#pages">Therapists</a></li>
+          <li class="link"><a href="#about">About Us</a></li>
           <li class="link"><a href="#blog">Why Us</a></li>
+          <li class="link"><a href="#pages">Therapists</a></li>
+          
         </ul>
    
       </nav>
@@ -729,8 +731,9 @@ select {
         <div class="header__form">
           <form>
             <h4>Schedule Consultation</h4>
-            <input type="text" placeholder="First Name" style="text-transform: uppercase;" />
-            <input type="text" placeholder="Last Name" style="text-transform: uppercase;" />
+            <input type="text" placeholder="First Name" style="text-transform: uppercase;" required />
+
+            <input type="text" placeholder="Last Name" style="text-transform: uppercase;" required />
             <label for="injury"></label>
             <select id="injury" name="injury">
               <option value="">SELECT YOUR INJURY</option>
@@ -750,52 +753,11 @@ select {
       </div>
     </header>
 
-<!-- New Section: What is Therapy? -->
-<section class="section__container therapy__container" id="therapy">
-  <div class="therapy__image">
-    <img src="whatistherapy.jpg"alt="therapy" />
-  </div>
-  <div class="therapy__content">
-    <h2 class="section__header">What is Therapy?</h2>
-    <p>
-      <strong style="color: #0f766e;">Physiotherapy</strong> is a branch of healthcare that focuses on 
-      <em>restoring and improving physical movement and function</em> through non-invasive techniques like 
-      <strong style="color: #0f766e;">exercise</strong>, 
-      <strong style="color: #0f766e;">manual therapy</strong>, and 
-      <strong style="color: #0f766e;">patient education</strong>.
-    </p>
-    
-    <p>
-      It plays a vital role in the <strong style="color: #0f766e;">recovery and rehabilitation</strong> of individuals with injuries, chronic pain, physical disabilities, or conditions affecting the 
-      <em>muscles, bones, nerves, or lungs</em>.
-    </p>
-    
-    <p>
-      Physiotherapists assess each person’s unique condition and craft 
-      <strong style="color:#0f766e;">personalized treatment plans</strong> to:
-    </p>
-    
-    <ul style="color: #0f766e">
-      <li> Reduce pain and discomfort</li>
-      <li> Improve strength, flexibility, and mobility</li>
-      <li> Prevent future injuries</li>
-    </ul>
-    
-    <p>
-      Whether in hospitals, sports centers, or home care — physiotherapy empowers people of all ages to live 
-      <em>healthier, more active lives</em> without depending on medication or surgery!
-    </p>
+
     
 
     
-    <!-- Centered Button -->
-    <div align ="center">
-      <a href="learn.html">
-        <button class="btn">Learn More</button>
-      </a>
-    </div>
-  </div>
-</section>
+   
 
   
 
@@ -820,8 +782,7 @@ select {
           
           <h4>Spine Clinic</h4>
           <p>
-            Detailed biomechanical analysis and functional movement screening 
-            to identify limitations and create personalized treatment plans.
+            At our Spine Clinic, we specialize in advanced care for back and neck pain, helping you move freely and live pain-free. Trust our expert team to bring strength back to your spine!
           </p>
           <a href="spine-clinic.html">Learn More</a>
         </div>
@@ -829,8 +790,7 @@ select {
           <a href="shoulder-clinic.html"> <span><i class="ri-body-scan-line"></i></span></a>
           <h4>Shoulder Clinic</h4>
           <p>
-            Targeted therapeutic exercises and manual therapy techniques 
-            to restore mobility and prevent future injuries.
+            Our Shoulder Clinic offers expert diagnosis and personalized treatments to relieve pain and restore full mobility. From injuries to chronic issues — we’ve got your back... and your shoulder!
           </p>
           <a href="shoulder-clinic.html">Learn More</a>
         </div>
@@ -838,8 +798,7 @@ select {
           <a href="vein-clinic.html"> <span><i class="ri-run-line"></i></span></a>
           <h4>Vein Clinic</h4>
           <p>
-            Specialized programs for athletes focusing on injury prevention, 
-            performance enhancement, and rapid recovery protocols.
+            Our Vein Clinic specializes in treating varicose and spider veins with advanced, minimally invasive techniques. Feel confident in your skin again — healthy veins, beautiful legs!
           </p>
           <a href="vein-clinic.html">Learn More</a>
         </div>
@@ -874,13 +833,16 @@ select {
         </p>
       </div>
       <div class="about__image">
-        <img src="c:\Users\Pritika Shah\OneDrive\Desktop\doctor\d2.jpg" alt="about" />
+        <img src="aboutus.jpeg" alt="about" />
       </div>
     </section>
 
     <section class="section__container why__container" id="blog">
-      <div class="why__image">
-        <img src="assets/choose-us.jpg" alt="why choose us" />
+      
+      <video src="Untitled design (1).mp4" autoplay muted loop playsinline style="width: 100%; max-width: 600px; height: 700px; object-fit: cover; border-radius: 12px; display: block; margin: auto;">
+        Your browser does not support the video tag.
+      </video>
+      
       </div>
       <div class="why__content">
         <h2 class="section__header">Our Approach</h2>
@@ -930,49 +892,47 @@ select {
           </p>
         </div>
         <div class="doctors__nav">
-          <span><i class="ri-arrow-left-line"></i></span>
-          <span><i class="ri-arrow-right-line"></i></span>
+          
         </div>
       </div>
       <div class="doctors__grid">
         <div class="doctors__card">
           <div class="doctors__card__image">
-            <img src="assets/doctor-1.jpg" alt="therapist" />
-            <div class="doctors__socials">
-              <span><i class="ri-instagram-line"></i></span>
-              <span><i class="ri-facebook-fill"></i></span>
-              <span><i class="ri-heart-fill"></i></span>
-              <span><i class="ri-twitter-fill"></i></span>
-            </div>
+           <a href ="t2.html"> <img src=" img2.jpeg " alt="therapist" /> </a>
+           
           </div>
-          <h4>Dr. Sarah Johnson</h4>
-          <p>Sports Physiotherapist</p>
+          <h4>
+            <a href="t2.html" style="color:#0d846c">
+              Dr. Jigar Patel
+            </a>
+          </h4>
+          <p>Physical therapist</p>
         </div>
         <div class="doctors__card">
           <div class="doctors__card__image">
-            <img src="assets/doctor-2.jpg" alt="therapist" />
-            <div class="doctors__socials">
-              <span><i class="ri-instagram-line"></i></span>
-              <span><i class="ri-facebook-fill"></i></span>
-              <span><i class="ri-heart-fill"></i></span>
-              <span><i class="ri-twitter-fill"></i></span>
-            </div>
+            <a href ="t3.html"><img src="img1.jpeg" alt="therapist" /></a>
+           
           </div>
-          <h4>Dr. Michael Chen</h4>
-          <p>Orthopedic Specialist</p>
+          <h4>
+            <a href="t3.html" style="color:#0d846c">
+              Dr. Jayesh Pandya
+            </a>
+          </h4>
+          <p>Neuro Physiotherapist</p>
         </div>
         <div class="doctors__card">
           <div class="doctors__card__image">
-            <img src="assets/doctor-3.jpg" alt="therapist" />
-            <div class="doctors__socials">
-              <span><i class="ri-instagram-line"></i></span>
-              <span><i class="ri-facebook-fill"></i></span>
-              <span><i class="ri-heart-fill"></i></span>
-              <span><i class="ri-twitter-fill"></i></span>
-            </div>
+            <a href = "t4.html"> <img src="img5.jpeg" alt="therapist" /> </a>
+           
           </div>
-          <h4>Dr. Emma Wilson</h4>
-          <p>Neurological Physio</p>
+          <h4>
+            <a href="t4.html" style="color:#0d846c">
+              Dr. Anjali Shah
+            </a>
+          </h4>
+          
+          <p>Consultant Physiotherapist & Certified Yoga Instructor
+          </p>
         </div>
       </div>
     </section>
@@ -991,33 +951,21 @@ select {
           </p>
         </div>
         <div class="footer__col">
-          <h4>About Us</h4>
-          <p>Our Team</p>
-          <p>Treatment Philosophy</p>
-          <p>Facility Tour</p>
-          <p>Research & Education</p>
-          <p>Insurance Info</p>
+          
         </div>
-        <div class="footer__col">
-          <h4>Services</h4>
-          <p>Physical Therapy</p>
-          <p>Sports Rehab</p>
-          <p>Post-Surgical Care</p>
-          <p>Pain Management</p>
-          <p>Wellness Programs</p>
-        </div>
+        
         <div class="footer__col">
           <h4>Contact Us</h4>
           <p>
-            <i class="ri-map-pin-2-fill"></i> 456 Recovery Lane, Health City
+            <i class="ri-map-pin-2-fill"></i> Cross Road, Ahemadabad
           </p>
-          <p><i class="ri-mail-fill"></i> care@physiocare.com</p>
-          <p><i class="ri-phone-fill"></i> (+012) 3456 789</p>
+          <p><i class="ri-mail-fill"></i> physiotrek@gmail.com</p>
+          <p><i class="ri-phone-fill"></i> 943123778</p>
         </div>
       </div>
       <div class="footer__bar">
         <div class="footer__bar__content">
-          <p>Copyright © 2023 PhysioCare. All rights reserved.</p>
+          <p>Copyright © 2025 PhysioCare. All rights reserved.</p>
           <div class="footer__socials">
             <span><i class="ri-instagram-line"></i></span>
             <span><i class="ri-facebook-fill"></i></span>
